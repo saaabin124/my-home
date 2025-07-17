@@ -1,0 +1,105 @@
+/* 디버깅용 전체 테두리 */
+/* {
+  border: 1px solid pink;
+}
+*/
+
+body {
+  background-color: whitesmoke;
+  color: black;
+  margin: 10px;
+  }
+a{
+  color: black;
+  text-decoration: none;
+}
+a:hover{
+  color: lightslategrey;
+}
+
+.work-sans {
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#main-title{
+  font-size: 8px;
+  padding-left: 20px;
+}
+#main-announcement{
+  display: flex;
+  font-size: 14px;
+  padding-left: 772px;
+  white-space: nowrap;
+}
+#main-moving{
+  font-size: 13px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: padding-left;
+  margin-bottom: 20px;
+}
+
+#main{
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
+#grid{
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+#main-container{
+padding-left: 0px;
+padding-top:0px
+}
+#menu {
+  display: block;
+  padding: 0;
+}
+
+#menu details {
+  font-size: 14px;
+  position: relative; /* 자유 배치를 위한 준비 */
+}
+
+.block1 {
+  margin-top: 10px;
+}
+
+.block2 {
+  margin-top: 10px;
+  text-alignt: left;
+}
+
+.block3 {
+  margin-top: 80px;
+}
+details summary {
+  cursor: pointer;
+  padding: 8px 2px;
+  background-color: none;
+  transition: background-color 0.3s, font-size 0.5s;
+}
+
+details summary:hover {
+  background-color: gainsboro;
+}
+
+details[open] summary {
+  font-size: 1.01em; /* 선택된 항목 글자 크게 */
+}
+
+details ul {
+  padding-left: 0px;
+  margin: 3px 10 10px;
+}
+
+details ul li {
+  padding: 2px 0;
+}
+#footer style{
+  margin: 0px;
+  margin-top: 0px;
+}
