@@ -60,17 +60,31 @@
 
 <div id="main-container">
 	<div id="tag">
-	<nav>
-		<p3>2025 2024 2023</p3>
-	</nav>
-	<nav> 
-		<p3>소리 교차 빛 촉감 유희 현실세계 세계 무게중심 사유지 타인 시간 언어 온기</p3>
-
-<div class="gallery-container">
-    <div class="gallery-item" data-caption="상큼한 라임 설명 줄 1<br>줄 2<br>줄 3">
-      <img src="lime.png" alt="Lime">
-      <div class="overlay">LIME</div>
-    </div>
+		<p3>tag</p3>
+	<div id="tag-buttons" class="tag-container">
+  <button class="tag" data-tag="2025">2025</button>
+  <button class="tag" data-tag="2024">2024</button>
+  <button class="tag" data-tag="2023">2023</button>
+  <button class="tag" data-tag="소리">소리</button>
+  <button class="tag" data-tag="교차">교차</button>
+  <button class="tag" data-tag="빛">빛</button>
+  <button class="tag" data-tag="촉감">촉감</button>
+  <button class="tag" data-tag="유희">유희</button>
+  <button class="tag" data-tag="현실세계">현실세계</button>
+  <button class="tag" data-tag="세계">세계</button>
+  <button class="tag" data-tag="무게중심">무게중심</button>
+  <button class="tag" data-tag="사유지">사유지</button>
+  <button class="tag" data-tag="타인">타인</button>
+  <button class="tag" data-tag="시간">시간</button>
+  <button class="tag" data-tag="언어">언어</button>
+  <button class="tag" data-tag="온기">온기</button>
+</div>
+</div>
+<div id="gallery-container" class="gallery-container">
+<div class="gallery-item" data-tags="2025,소리,촉감">
+  <img src="lime.png" alt="예시 이미지" />
+  <div class="overlay">ORANGE</div>
+</div>
     <div class="gallery-item" data-caption="신선한 오렌지 설명 줄 1<br>줄 2<br>줄 3">
       <img src="sand.png" alt="Orange">
       <div class="overlay">ORANGE</div>
@@ -118,7 +132,6 @@
   </div>
 
   <div class="detail-view" id="detailView">
-  	
     <img id="detailImage" class="detail-image" src="" alt="">
     <div id="detailCaption" class="detail-caption"></div>
   </div>
