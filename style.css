@@ -7,7 +7,9 @@
 body {
   background-color: whitesmoke;
   color: black;
-  margin: 10px;
+  margin: 18px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
   }
 a{
   color: black;
@@ -26,13 +28,14 @@ a:hover{
 
 #main-title{
   font-size: 8px;
-  padding-left: 20px;
+  padding-left: 0px;
 }
 #main-announcement{
+ font-size: 13px;
   display: flex;
-  font-size: 14px;
-  padding-left: 772px;
-  white-space: nowrap;
+  justify-content: flex-end;
+  align-items: padding-left;
+  margin-bottom: 20px;
 }
 #main-moving{
   font-size: 13px;
@@ -103,3 +106,76 @@ details ul li {
   margin: 0px;
   margin-top: 0px;
 }
+* { box-sizing: border-box; margin:0; padding:0; }
+body { font-family: sans-serif; overflow-y: scroll; }
+
+/* 반응형 3 → 2 → 1열 */
+.gallery-container {
+  display: grid;
+  gap: 12px;
+  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.03);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+
+/* 디테일 뷰 스타일 */
+.detail-view {
+  padding: 26px 0px;
+  text-align: center;
+}
+
+.detail-image {
+  width: 90%;
+  max-width: 800px;
+  height: auto;
+  margin: 0 auto 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.detail-caption {
+  margin: 10px;
+  margin-bottom: 210px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* 라임색 스크롤바 */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb { background: rgba(173,255,47,0.6); border-radius:4px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+    
