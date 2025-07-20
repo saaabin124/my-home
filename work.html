@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Work+Sans:wght@100..900&display=swap" rel="stylesheet">
 
-
+ <div class="scroll-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"></div>
 
 <div id="container">
 	<div id="main">
@@ -54,13 +54,14 @@
     </details>
 
     <p><a href="work.html">작업</a></p>
-    <p><a href="letter.html">글</a></p>
+    <p><a href="letters.html">글</a></p>
     <p><a href="workshop.html">워크인</a></p>
+    <p><a href="design.html">디자인</a></p>
   </ul>
 
 <div id="main-container">
-	<div id="tag">
-		<p3>tag</p3>
+	<div class="tag-box">
+	<p>tag</p>
 	<div id="tag-buttons" class="tag-container">
   <button class="tag" data-tag="2025">2025</button>
   <button class="tag" data-tag="2024">2024</button>
@@ -81,10 +82,10 @@
 </div>
 </div>
 <div id="gallery-container" class="gallery-container">
-<div class="gallery-item" data-tags="2025,소리,촉감">
-  <img src="lime.png" alt="예시 이미지" />
-  <div class="overlay">ORANGE</div>
-</div>
+		<div class="gallery-item" data-tags="2025,소리,촉감>" data-caption="신선한 오렌지 설명 줄 1<br>줄 2<br>줄 3">
+      <img src="sand.png" alt="Orange">
+      <div class="overlay">ORANGE</div>
+    </div>
     <div class="gallery-item" data-caption="신선한 오렌지 설명 줄 1<br>줄 2<br>줄 3">
       <img src="sand.png" alt="Orange">
       <div class="overlay">ORANGE</div>
