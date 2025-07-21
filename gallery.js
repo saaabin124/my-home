@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const galleryItems = document.querySelectorAll('.gallery-item');
   const detailView = document.getElementById('detailView');
@@ -220,9 +222,127 @@ const expandedSize = Math.min(window.innerWidth, window.innerHeight) * 0.7;
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  createInteractiveCircles();
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  const prevBtn = document.getElementById("prevImage");
+  const nextBtn = document.getElementById("nextImage");
+
+  let currentImages = [];  // 현재 열려있는 행의 이미지 리스트
+  let currentIndex = 0;
+  let isLocked = false;    // 클릭 고정 여부
+
+  // 이미지 클릭 이벤트 등록
+  document.querySelectorAll(".scrollable-image-row img").forEach(img => {
+    img.addEventListener("click", (e) => {
+      const clickedImg = e.target;
+
+      // 클릭한 이미지가 속한 scrollable-image-row 찾기
+      const container = clickedImg.closest(".scrollable-image-row");
+      if (!container) return;
+
+      currentImages = Array.from(container.querySelectorAll("img"));
+      currentIndex = currentImages.indexOf(clickedImg);
+
+      openModal(currentImages[currentIndex].src);
+      isLocked = true;  // 클릭하면 고정 모달
+
+      e.stopPropagation();
+    });
+  });
+
+  // 모달 이미지 설정 및 표시
+  function openModal(src) {
+    modalImg.src = src;
+    modal.classList.add("active");
+  }
+
+  // 모달 닫기
+  function closeModal() {
+    modal.classList.remove("active");
+    modalImg.src = "";
+    isLocked = false;
+  }
+
+  // 모달 배경 클릭하면 닫기 (단, 이미지 클릭 시 고정, 다시 배경 클릭 시 닫힘)
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal && isLocked) {
+      closeModal();
+    }
+  });
+
+  // 좌우 이동 함수
+  function showImageAt(index) {
+    if (index < 0) index = currentImages.length - 1;
+    else if (index >= currentImages.length) index = 0;
+    currentIndex = index;
+    modalImg.src = currentImages[currentIndex].src;
+  }
+
+  // 이전 버튼
+  prevBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (!isLocked) return;
+    showImageAt(currentIndex - 1);
+  });
+
+  // 다음 버튼
+  nextBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (!isLocked) return;
+    showImageAt(currentIndex + 1);
+  });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDetails = document.getElementById("modalDetails");
+  const modalCaption = document.getElementById("modalCaption");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const images = document.querySelectorAll(".scrollable-image-row img");
 
+  let currentIndex = 0;
+
+  const openModal = (index) => {
+    const img = images[index];
+    modalImg.src = img.src;
+    modalTitle.textContent = img.dataset.title || "";
+    modalDetails.textContent = img.dataset.details || "";
+    modalCaption.textContent = img.dataset.caption || "";
+    modal.classList.add("active");
+    currentIndex = index;
+  };
+
+  const closeModal = () => {
+    modal.classList.remove("active");
+  };
+
+  const showPrev = () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    openModal(currentIndex);
+  };
+
+  const showNext = () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    openModal(currentIndex);
+  };
+
+  images.forEach((img, index) => {
+    img.addEventListener("click", () => openModal(index));
+  });
+
+  prevBtn.addEventListener("click", showPrev);
+  nextBtn.addEventListener("click", showNext);
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
+  });
+});
 

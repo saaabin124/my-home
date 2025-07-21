@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+  <title>Sabin Lee 이사빈</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="concept engineer">
+  <meta name="keywords" content="Lee Sabin, 이사빈, Sculpture, Artist, Korean, Workshop engineer, performance, art, editor, publisher">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="gallery.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Work+Sans:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="scroll-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"></div>
+
+<div id="container">
+  <div id="main">
+    <div id="main-title">
+      <h1><a href="index.html">이사빈&nbsp;&nbsp;Sabin Lee</a></h1>
+    </div>
+    <div id="main-announcement">
+      <p>사빈에 대한 2 가지 언어 <a href="index.html">한국어</a> / <a href="index_ENG.html">ENG</a>, 그리고 <a href="https://docs.google.com/spreadsheets/d/1YI0Qxd0TB19YCd_N_u_V4gD2r_KZMkNxPGMSMtsMUBY/edit?usp=sharing" target="_blank">발자취</a></p>
+    </div>
+  </div>
+
+  <div id="main-moving">유희적으로 움직이듯이</div>
+
+  <div id="grid">
+    <ul id="menu">
+      <details class="block0">
+        <summary>소개</summary>
+        <p>만나뵙게 되어 반갑습니다.<br>서울을 기반으로 조각과 퍼포먼스, 무빙이미지를 매개로 한 작업을 하고 있습니다.<br><br>삶에서 비롯한 ‘감정의 순간’을 포착하거나 개별적 타인들이 쌓는 세계를 관찰하고, 함께 움직이는 마음으로 정동의 가능성을 탐구합니다. 최근에는 비물질(소리, 빛)의 침투 방식을 답습한 퍼포먼스와 미디어 아트를 전개하고 있습니다.</p>
+      </details>
+      <p><a href="work.html">작업</a></p>
+      <p><a href="letters.html">글</a></p>
+      <p><a href="workshop.html">워크인</a></p>
+      <p><a href="design.html">디자인</a></p>
+    </ul>
+
+    <div id="main-container">
+<!-- 단 하나의 모달 구조만 유지 -->
+<div id="imageModal" class="image-modal">
+  <div class="modal-inner">
+    
+    <!-- 좌측: 이미지 (80%) -->
+    <div class="modal-image">
+      <img id="modalImage" src="lime.png" alt="확대 이미지">
+    </div>
+
+    <!-- 우측: 텍스트 박스 (20%) -->
+    <div class="modal-text">
+      <h2 id="modalTitle">타이틀</h2>
+      <div id="modalDetails">세부 내용</div>
+      <p id="modalCaption">캡션</p>
+    </div>
+  </div>
+
+  <!-- 이전/다음 화살표 -->
+  <span class="arrow left" id="prevBtn">&#10094;</span>
+  <span class="arrow right" id="nextBtn">&#10095;</span>
+</div>
+
+
+</div>
+
+<footer>
+  <div class="contact">sabinlee124@gmail.com</div>
+  <a href="https://www.instagram.com/sa_lusio" target="_blank">@sa_lusio</a>
+</footer>
+
+</body>
+</html>
